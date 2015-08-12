@@ -13,7 +13,7 @@ def capitalize_nested(listOfLists):
 		 	newNestedList =	capitalize_nested(item)
 		 	newList.append(newNestedList)
 		else:
-			newList.append(item.upper())
+			newList.append(item.capitalize())
 	return newList
 
 def main():
