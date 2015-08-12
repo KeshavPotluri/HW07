@@ -5,3 +5,19 @@
 # In your final submission: 
 #  - Do not print anything extraneous!
 #  - Do not put anything but pass in main()
+
+def capitalize_nested(listOfLists):
+	newList = list()
+	for item in listOfLists:
+		if type(item) == type(list()):
+		 	newNestedList =	capitalize_nested(item)
+		 	newList.append(newNestedList)
+		else:
+			newList.append(item.upper())
+	return newList
+
+def main():
+	pass	
+
+if __name__ == '__main__':
+    main()
