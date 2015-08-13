@@ -7,7 +7,7 @@
 #  - Do not print anything extraneous!
 #  - Do not put anything but pass in main()
 
-def cumulative_sum(ListOfStuff):
+def cumulative_sum_withoutLC(ListOfStuff):
 	sumOfThings = []
 	total = 0
 
@@ -15,6 +15,10 @@ def cumulative_sum(ListOfStuff):
 		total += item
 		sumOfThings.append(total)
 	
+	return sumOfThings
+
+def cumulative_sum(ListOfStuff):
+	sumOfThings = [sum(ListOfStuff[:i+1]) for i in range(len(ListOfStuff))]
 	return sumOfThings
 
 def main():

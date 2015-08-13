@@ -6,7 +6,7 @@
 #  - Do not print anything extraneous!
 #  - Do not put anything but pass in main()
 
-def capitalize_nested(listOfLists):
+def capitalize_nested_withoutLC(listOfLists):
 	newList = list()
 	for item in listOfLists:
 		if type(item) == type(list()):
@@ -14,6 +14,10 @@ def capitalize_nested(listOfLists):
 		 	newList.append(newNestedList)
 		else:
 			newList.append(item.capitalize())
+	return newList
+
+def capitalize_nested(listOfLists):
+	newList = [capitalize_nested(word) if type(word) is list else word.capitalize() for word in listOfLists]
 	return newList
 
 def main():

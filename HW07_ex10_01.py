@@ -6,7 +6,7 @@
 #  - Do not print anything extraneous!
 #  - Do not put anything but pass in main()
 
-def nested_sum(nested_lists):
+def nested_sum_withoutLC(nested_lists):
 	sumOfNumbers = 0
 	for item in nested_lists:
 		if type(item) == type(list()):
@@ -15,9 +15,13 @@ def nested_sum(nested_lists):
 			sumOfNumbers += item
 	return sumOfNumbers
 			
-
+def nested_sum(nested_lists):
+	new_list = [nested_sum(item) if type(item) is list else item for item in nested_lists]
+	return sum(new_list)
 
 def main():
+
+
 	pass
 
 if __name__ == '__main__':
